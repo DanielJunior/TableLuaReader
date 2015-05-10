@@ -1,0 +1,36 @@
+body{
+    background-color: #225C93;
+}
+section{
+    margin-top: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 20px;
+    background-color: white;
+}
+.centralizado{
+    margin: 20px auto;
+    width: 60%;
+    text-align: center;
+}
+nav a{
+    color: white;
+}
+body h1 {
+    text-align: center;
+    color: #225C93;
+}
+nav{
+    background-color: #FF632E;
+    text-align: left;
+    padding: 10px;
+}
+#formulario{
+    padding-left: 20px;
+    margin: 0 auto;
+    text-align: left;
+}
+footer{
+    margin: 10px auto;
+    text-align: center;
+}

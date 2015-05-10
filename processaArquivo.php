@@ -1,26 +1,25 @@
 <h1>Resultado aqui</h1>
 
 <?php
+include './insercao_banco.php';
+
 $arq = $_FILES['data']['tmp_name'];
-
 $ponteiro = fopen($arq, "r");
-
+$registro = array();
 while (!feof($ponteiro)) {
-
     $linha = fgets($ponteiro);
     $array = explode("=", $linha);
-    echo $linha . "<br>";
-    echo "AGORA O ARRAY<br>";
-    echo $array[0]. "<br>";
+    if (count($array) > 1) {
+        $chave = trim($array[0], " ");
+        $valor = trim(trim($array[1]), ",");
+        $registro[$chave] = $valor;
+    }
+    if (count($registro) == 9) {
+        inserir($registro);
+        $registro = array();
+    }
 }
 fclose($ponteiro);
+mysql_close($conexao);
 
-//echo file_get_contents($arq);
-//$temp = "json_format.json";
-//rename($arq, $temp);
-//header("Content-type: text/html; charset=utf-8");
-//$json = file_get_contents($temp, 0, null, null);
-//$json_output = json_decode($json);
-//print_r($json_output);
-
-
+header("Location: /artigos.php");
