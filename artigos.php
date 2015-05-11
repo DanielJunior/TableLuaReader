@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -5,10 +6,13 @@
         <link href="css/estilo.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
-        <section class="centralizado">
+        <div class="centralizado" id="conteudo">
             <?php include './header.php'; ?>
-            <h1 class="">Artigos</h1>
-            <?php include './listar_artigos.php'; ?>
-        </section>
+            <section>
+                <h1>Artigos</h1>
+                <?php include './listar_artigos.php'; ?>
+            </section>
+        </div>
+        <?php include './footer.php'; ?>
     </body>
 </html>

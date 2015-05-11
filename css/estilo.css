@@ -1,13 +1,6 @@
 body{
     background-color: #225C93;
 }
-section{
-    margin-top: 50px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-radius: 20px;
-    background-color: white;
-}
 .centralizado{
     margin: 20px auto;
     width: 60%;
@@ -33,4 +26,17 @@ nav{
 footer{
     margin: 10px auto;
     text-align: center;
+}
+
+header{
+    background-image: linear-gradient(to bottom, #2EB5FF, #FFC75F);
+    height: 25%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+#conteudo{
+    margin-top: 1%;
+    padding-bottom: 10px;
+    border-radius: 20px;
+    background-color: white;
 }

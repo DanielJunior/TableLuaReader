@@ -1,12 +1,14 @@
 <?php
+
 include './conexao_banco.php';
+//consulta a ser feita
 $query = sprintf("select * from artigos");
 // executa a query 
-$dados = mysql_query($query, $conexao) or die(mysql_error());
+$dados = mysqli_query($conexao, $query) or die(mysqli_connect_errno());
 // transforma os dados em um array
-$linha = mysql_fetch_assoc($dados);
+$linha = mysqli_fetch_assoc($dados);
 // calcula quantos dados retornaram 
-$total = mysql_num_rows($dados);
+$total = mysqli_num_rows($dados);
 
 if ($total > 0) { // inicia o loop que vai mostrar todos os dados 
     echo "<ul>";
@@ -19,10 +21,10 @@ if ($total > 0) { // inicia o loop que vai mostrar todos os dados
         $linha['mes'] . ", " .
         $linha['ano'];
         echo "</li>";
-    } while ($linha = mysql_fetch_assoc($dados));
+    } while ($linha = mysqli_fetch_assoc($dados));
     echo "</ul>";
 } else {
     echo "<h2>Não há artigos salvos.</h2>";
 }
-mysql_close($conexao);
+$conexao->close();
 ?>
